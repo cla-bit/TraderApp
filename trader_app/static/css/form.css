@@ -1,0 +1,39 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* CSS Variables */
+  --blue: #2a47df;
+  --gray: #f2f2f2;
+
+  /* Fonts */
+  --inputfonts: 18px;
+  --textweight: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+/* Add this CSS to your style file */
+.login form .error-message,
+ .signup form .error-message {
+    color: red;
+    font-size: 1rem;
+}
+
+.login form .is-invalid,
+ .signup form .is-invalid {
+    border-color: red;
+    /* Add any other styles to indicate error */
+}

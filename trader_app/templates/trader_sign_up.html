@@ -1,0 +1,27 @@
+{% extends 'base/form.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block account %}
+
+    <!-- Sign Up Section -->
+    <section class="signup" style="display: initial">
+        <form method="POST" action="{% url 'trading:trader_sign_up' %}">
+            {% csrf_token %}
+            {% render_field trader_form.username placeholder="username" class="form-control" %}
+            <div class="error-message"> {{ trader_form.username.errors }} </div>
+            {% render_field trader_form.email placeholder="email" class="form-control" %}
+            <div class="error-message"> {{ trader_form.email.errors }} </div>
+            {% render_field trader_form.password1 placeholder="password" class="form-control" %}
+            <div class="error-message"> {{ trader_form.password1.errors }} </div>
+            {% render_field trader_form.password2 placeholder="confirm password" class="form-control" %}
+            <div class="error-message"> {{ trader_form.password2.errors }} </div>
+
+            <button type="submit" class="signup-btn">Sign up</button>
+            <span>Have an account already?
+                <a href="{% url 'trading:trader_sign_in' %}">Sign in</a>
+            </span>
+        </form>
+    </section>
+
+
+{% endblock %}

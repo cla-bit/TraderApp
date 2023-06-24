@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">Trader App</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="{% url 'trading:user_dashboard' trader %}" class="active">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+        </li>
+        <li class="log_out">
+            <a href="{% url 'trading:trader_logout' %}">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="profile-details">
+                <img src="{% static 'images/profile.jpg' %}" alt="">
+                <span class="admin_name">{{ trader }}</span>
+            </div>
+        </nav>
+
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Trade</div>
+                        <div class="number">{{ trades|length }}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                            <span class="text">{{ time }}</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-cart-alt cart'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Balance</div>
+                        <div class="number">{{ balance|floatformat:2 }}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                            <span class="text">{{ time }}</span>
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-add cart two' ></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Profit</div>
+                        <div class="number">{{ profit_loss|floatformat:2 }}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                            <span class="text">{{ time }}</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-cart cart three' ></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Return</div>
+                        <div class="number">{{ capital|floatformat:2 }}</div>
+                        <div class="indicator">
+                            <i class='bx bx-down-arrow-alt down'></i>
+                            <span class="text">Down From Today</span>
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-download cart four' ></i>
+                </div>
+            </div>
+
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Recent Sales</div>
+
+                    <div class="sales-details">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                    <script>
+                        $(document).ready(function(){
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                             new Chart(ctx, {
+                                 type: 'line',
+                                 data: {
+                                     labels: [{% for trade in trades %}'{{trade.timestamp|time}}',{% endfor %}],
+                                     datasets: [{
+                                         label: 'Profit/Loss',
+                                         data: [{% for trade in trades %}'{{trade.profit_loss|floatformat:2}}',{% endfor %}],
+                                         borderWidth: 1
+                                     }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                   }
+                             });
+                          });
+                    </script>
+
+                </div>
+                <div class="top-sales box">
+                    <div class="title">Trades Log</div>
+                    <ul class="top-sales-details">
+                        {% for trade in trades %}
+                        <li>
+                            <div>
+                                <h6>Balance:{{ trade.balance }}</h6>
+                                <h6>Profit/Loss:{{ trade.profit_loss }}</h6>
+                                <h6>Date & Time:{{ trade.timestamp }}</h6>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
+

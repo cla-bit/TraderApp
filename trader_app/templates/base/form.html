@@ -1,0 +1,35 @@
+<!DOCTYPE>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Styles -->
+        <link rel="stylesheet" href="{% static 'css/form.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+        <title>Trader App</title>
+    </head>
+    <body>
+        <main class="homepage">
+            <section class="logo">
+                <img src="{% static 'images/OIP (2).jfif' %}" alt="Our Logo"/>
+            </section>
+
+            <!-- Login and Sign up Section -->
+            <main class="login-and-reg" style="display: none">
+                <div class="header">
+                    <h1>Trader App</h1>
+                </div>
+
+                {% block account %}
+
+                {% endblock %}
+
+            </main>
+        </main>
+
+        <!-- Script -->
+        <script type="module" src="{% static 'js/form.js' %}"></script>
+    </body>
+</html>

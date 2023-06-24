@@ -1,0 +1,28 @@
+{% extends 'base/form.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block account %}
+    <!-- Login Section -->
+    <section class="login">
+        <form method="POST" action="{% url 'trading:trader_sign_in' %}">
+            {% csrf_token %}
+            <!-- Display field errors -->
+            {% for field in trader_form %}
+                {% for error in field.errors %}
+                    <div class="error-message is-invalid">{{ error }}</div>
+                {% endfor %}
+            {% endfor %}
+            <!-- <p>Field cannot be empty</p> -->
+            {% render_field trader_form.username placeholder="username" class="form-control" %}
+            {% render_field trader_form.password placeholder="password" class="form-control" %}
+
+            <p>forget password?</p>
+            <button type="submit" class="login-btn">Sign in</button>
+            <br/>
+            <span> Don't have an account?
+                <a href="{% url 'trading:trader_sign_up' %}">Sign up</a>
+            </span>
+        </form>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+.login,
+.signup {
+  text-align: center;
+  /* height: 100vh; */
+}
+
+.header h1 {
+  background-color: var(--blue);
+  color: #fff;
+  padding-block: 10px;
+  text-align: center;
+}
+
+.login form,
+.signup form {
+  /* border: 2px solid red; */
+  margin-top: 4rem;
+  width: 350px;
+  margin-inline: auto;
+}
+
+.login form p:first-child {
+  color: red;
+  text-align: center;
+}
+
+.login form input,
+.signup form input,
+select {
+  width: 100%;
+  font-size: var(--inputfont);
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.login form p {
+  text-align: right;
+  margin-top: 10px;
+  color: var(--blue);
+  font-weight: var(--textweight);
+  cursor: pointer;
+}
+
+.login-btn,
+.signup-btn,
+.disease-btn {
+  background-color: var(--blue);
+  border: none;
+  width: 100%;
+  color: #fff;
+  padding-block: 15px;
+  font-size: var(--inputfont);
+  border-radius: 30px;
+  margin-block: 3.5rem 1.5rem;
+  transition: ease 0.5s all;
+}
+.login-btn:hover,
+.signup-btn:hover,
+.disease-btn:hover {
+  opacity: 0.8;
+}
+
+.login form span a,
+.signup form span a {
+  color: var(--blue);
+  font-weight: var(--textweight);
+  cursor: pointer;
+  margin-inline: 5px;
+  text-decoration: none;
+}
+.login form span a:hover,
+.signup form span a:hover {
+  text-decoration: underline;
+}
+
+/* Logo CSS */
+.logo {
+  height: 95vh;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce-out 1s infinite;
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  /* 100% {
+    transform: scale(1);
+    opacity: 0;
+  } */
+}
+
+.logo img {
+  width: 200px;
+}
