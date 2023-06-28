@@ -12,3 +12,15 @@ New users are given $100 as capital.
 1. Users can create an account or Login to their accounts.
 2. Administrators can login and check, and manage users activities.
 3. With a scheduling job, a simulation of profit and loss is done every minute. 
+
+<h1>Remeber to use these Trader login information to check out demo.</h1>
+<ul>
+	<li>
+		<div>Name: claver</div>
+		<div>Password: baby1234!@#$</div>
+	</li>
+	<li>
+		<div>Name: andi</div>
+		<div>Password: 1qazxsw23edc</div>
+	</li>
+</ul>
