@@ -17,42 +17,42 @@ New users are given $100 as capital.
 <ul>
 	<li>
 		<div>Name: trader1</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader2</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader3</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader4</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader5</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader6</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader7</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader8</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader9</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 	<li>
 		<div>Name: trader10</div>
-		<div>Password: 1qazxsw23edc</div>
+		<div>Password: zaq12wsxcde3</div>
 	</li>
 </ul>
